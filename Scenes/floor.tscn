@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://cepptomjnmekp"]
+
+[ext_resource type="Texture2D" uid="uid://cvm3flmq8xwl8" path="res://icon.svg" id="1_0dyem"]
+[ext_resource type="PackedScene" uid="uid://1e36uq8o0xd5" path="res://Scenes/player.tscn" id="2_6eat5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xu5ky"]
+albedo_texture = ExtResource("1_0dyem")
+
+[sub_resource type="BoxMesh" id="BoxMesh_s6c57"]
+
+[node name="Floor" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(11.3886, 0, 0, 0, 0.0899421, 0, 0, 0, 14.165, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_xu5ky")
+mesh = SubResource("BoxMesh_s6c57")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 3)
+current = true
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("2_6eat5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
